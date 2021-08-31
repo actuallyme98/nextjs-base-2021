@@ -1,0 +1,10 @@
+{
+  "sign_in": "Sign in",
+  "welcome_back": "Welcome back",
+  "sign_in_to_get_in_touch": "Sign in to get in touch",
+  "email": "Email",
+  "password": "Password",
+  "required": "Required",
+  "invalid_email": "Invalid email",
+  "min_password_validate_text": "Use 8 or more characters"
+}

@@ -1,0 +1,18 @@
+import React from 'react';
+// i18n
+import { useTranslation } from 'next-i18next';
+// components
+
+// styles
+import { useStyles } from './style';
+
+interface Props {}
+
+const {{compName}}: React.FC<Props> = (props) => {
+  const classes = useStyles(props);
+  const { t } = useTranslation();
+
+  return <div className={classes.root}></div>;
+};
+
+export default {{compName}};

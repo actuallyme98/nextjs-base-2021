@@ -1,0 +1,10 @@
+{
+  "sign_in": "Đăng nhập",
+  "welcome_back": "Chào mừng trở lại",
+  "sign_in_to_get_in_touch": "Đăng nhập để bắt đầu",
+  "email": "Email",
+  "password": "Mật khẩu",
+  "required": "Bắt buộc",
+  "invalid_email": "Email không hợp lệ",
+  "min_password_validate_text": "Mật khẩu ít nhất 8 ký tự"
+}
