@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { AppProps } from 'next/app';
+import App, { AppProps, AppContext } from 'next/app';
 import Head from 'next/head';
 // providers
 import { SnackbarProvider } from 'notistack';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core/styles';
 // i18n
-import { appWithTranslation } from 'next-i18next';
+import { appWithTranslation } from '~/i18n';
 // redux
 import { useStore } from '~/redux/with-redux';
 import { InitialState, resetTypeReduxState } from '~/redux/configure-store';
@@ -55,6 +55,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       </ThemeProvider>
     </React.Fragment>
   );
+};
+
+MyApp.getInitialProps = async (appContext: AppContext) => {
+  const appProps = await App.getInitialProps(appContext);
+
+  return {
+    ...appProps,
+  };
 };
 
 export default appWithTranslation(MyApp);

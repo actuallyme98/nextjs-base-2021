@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
 // i18n
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/i18n';
 // redux
 import { useDispatch } from 'react-redux';
 import * as AppActions from '~/redux/actions/app.action';

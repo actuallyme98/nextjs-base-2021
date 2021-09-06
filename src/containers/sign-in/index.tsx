@@ -2,8 +2,9 @@ import React, { useCallback } from 'react';
 import { NextPage, InitialProps } from 'next';
 import { useRouter } from 'next/router';
 // i18n
-import { useTranslation } from 'next-i18next';
+import { useTranslation, NamespaceEnums } from '~/i18n';
 // redux
+import { initializeStore } from '~/redux/with-redux';
 import { useDispatch } from 'react-redux';
 import * as AppActions from '~/redux/actions/app.action';
 // components
@@ -114,6 +115,16 @@ const SignInPage: NextPage<Props, InitialProps> = (props) => {
       </div>
     </AuthLayout>
   );
+};
+
+SignInPage.getInitialProps = async ({ req }) => {
+  const reduxStore = initializeStore();
+
+  return {
+    title: 'Login',
+    namespacesRequired: [NamespaceEnums.AUTH_PAGE],
+    initialReduxState: JSON.stringify(reduxStore.getState()),
+  };
 };
 
 export default SignInPage;

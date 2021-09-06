@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 // i18n
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '~/i18n';
 // components
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';

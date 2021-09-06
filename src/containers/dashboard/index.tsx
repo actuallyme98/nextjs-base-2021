@@ -1,7 +1,9 @@
 import React from 'react';
 import { NextPage, InitialProps } from 'next';
 // i18n
-import { useTranslation } from 'next-i18next';
+import { useTranslation, NamespaceEnums } from '~/i18n';
+// redux
+import { initializeStore } from '~/redux/with-redux';
 // components
 import Layout from '~/components/layout';
 // styles
@@ -19,6 +21,16 @@ const DashboardPage: NextPage<Props, InitialProps> = (props) => {
       <div className={classes.root}></div>
     </Layout>
   );
+};
+
+DashboardPage.getInitialProps = async ({ req }) => {
+  const reduxStore = initializeStore();
+
+  return {
+    title: 'Dashboard',
+    namespacesRequired: [NamespaceEnums.COMMON],
+    initialReduxState: JSON.stringify(reduxStore.getState()),
+  };
 };
 
 export default DashboardPage;

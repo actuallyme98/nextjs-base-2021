@@ -8,13 +8,13 @@ import { ThemeProvider } from '@material-ui/core/styles';
 // redux
 import { configureStore } from '~/redux/configure-store';
 // i18n
-import { i18n } from 'next-i18next';
+import { i18n } from '~/i18n';
 // theme
 import theme from '~/styles/theme';
-// components
-import Component from '.';
+// page
+import Page from '.';
 
-describe('Component test', () => {
+describe('Page test', () => {
   test('Renders correctly', () => {
     const store = configureStore();
     const tree = shallow(
@@ -22,7 +22,7 @@ describe('Component test', () => {
         <I18nextProvider i18n={i18n}>
           <ThemeProvider theme={theme}>
             <Provider store={store}>
-              <Component title="Test" namespacesRequired={[]} />
+              <Page title="Test" namespacesRequired={[]} />
             </Provider>
           </ThemeProvider>
         </I18nextProvider>

@@ -7,17 +7,14 @@ dotenv.config({
 
 const apiDocsUrl = process.env.API_DOCS_URL || 'http://localhost:5000/api/doc-json';
 
-exec(
-  `node_modules/.bin/openapi-typescript ${apiDocsUrl} --output src/types/api.ts`,
-  (error, stdout, stderr) => {
-    if (error) {
-      console.log(`error: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    console.log(`Generate api type success: ${stdout}`);
-  },
-);
+exec(`openapi-typescript ${apiDocsUrl} --output src/types/api.ts`, (error, stdout, stderr) => {
+  if (error) {
+    console.log(`error: ${error.message}`);
+    return;
+  }
+  if (stderr) {
+    console.log(`stderr: ${stderr}`);
+    return;
+  }
+  console.log(`Generate api type success: ${stdout}`);
+});
