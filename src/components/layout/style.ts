@@ -9,6 +9,9 @@ const styles = (theme: Theme) =>
       paddingTop: TOOLBAR_MIN_HEIGHT,
       paddingLeft: SIDE_BAR_WIDTH,
       minHeight: '100vh',
+      [theme.breakpoints.down('md')]: {
+        paddingLeft: 0,
+      },
     },
   });
 
