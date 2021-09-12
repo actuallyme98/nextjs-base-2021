@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  base-nextjs:
+    container_name: base-nextjs
+    env_file:
+      - .env.production
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    command: bash -c "yarn && yarn build && yarn start -p ${PORT}"
+    restart: unless-stopped
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - .env.production:/.env.production

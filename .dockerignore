@@ -1,0 +1,21 @@
+# compiled output
+/.next
+/node_modules
+/out
+
+# git
+.git
+.gitignore
+
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDE - VSCode
+.vscode
+
+# Env
+.env.sample
